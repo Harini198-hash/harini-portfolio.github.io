@@ -1,0 +1,303 @@
+
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harini D — CSE Student & Aspiring Web Developer</title>
+<meta name="description" content="Portfolio of Harini D, first-year CSE (IoT) student at Sri Krishna College, Coimbatore. Aspiring web developer seeking internships." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e1a; --bg-2:#0f1525; --card:rgba(255,255,255,0.04);
+    --border:rgba(255,255,255,0.08); --fg:#e8ecf3; --muted:#8b95a8;
+    --primary:#22d3ee; --accent:#a855f7; --pink:#ec4899;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--fg);
+    font-family:'Inter',sans-serif;overflow-x:hidden;
+    background-image:
+      radial-gradient(1000px 600px at 10% -10%, rgba(34,211,238,.15), transparent 60%),
+      radial-gradient(800px 500px at 90% 10%, rgba(168,85,247,.12), transparent 60%),
+      radial-gradient(900px 600px at 50% 100%, rgba(236,72,153,.08), transparent 60%);
+  }
+  .display{font-family:'Space Grotesk',sans-serif}
+  .glass{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);}
+  .gradient-bg{background:linear-gradient(135deg,var(--primary),var(--accent),var(--pink));}
+  .gradient-text{background:linear-gradient(135deg,var(--primary),var(--accent),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .glow{box-shadow:0 0 40px rgba(34,211,238,.35),0 0 80px rgba(168,85,247,.25);}
+  .section{padding:6rem 0}
+  .muted{color:var(--muted)}
+  .border-soft{border:1px solid var(--border)}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .float{animation:float 5s ease-in-out infinite}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .fade-up{animation:fadeUp .8s ease-out both}
+  @keyframes pulseGlow{0%,100%{box-shadow:0 0 30px rgba(34,211,238,.4)}50%{box-shadow:0 0 60px rgba(168,85,247,.6)}}
+  .pulse-glow{animation:pulseGlow 3s ease-in-out infinite}
+  .link-underline{position:relative}
+  .link-underline::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--primary);transition:width .3s}
+  .link-underline:hover::after{width:100%}
+  .skill-bar{height:8px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden}
+  .skill-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:999px;width:0;transition:width 1.5s ease-out}
+  .chip{padding:.35rem .8rem;border-radius:999px;background:rgba(255,255,255,.06);font-size:.8rem}
+  input,textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--fg);border-radius:.75rem;padding:.85rem 1rem;width:100%;font-family:inherit}
+  input:focus,textarea:focus{outline:none;border-color:var(--primary)}
+  .btn-primary{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0a0e1a;font-weight:600;padding:.8rem 1.6rem;border-radius:999px;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s;border:none;cursor:pointer}
+  .btn-primary:hover{transform:scale(1.05)}
+  .btn-ghost{border:1px solid var(--border);padding:.8rem 1.6rem;border-radius:999px;color:var(--fg);transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+  .typed::after{content:"|";color:var(--primary);animation:blink 1s infinite}
+  @keyframes blink{50%{opacity:0}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="text-xl display font-bold gradient-text">Harini.D</a>
+    <ul class="hidden md:flex items-center gap-8 text-sm">
+      <li><a href="#home" class="muted hover:text-white link-underline">Home</a></li>
+      <li><a href="#about" class="muted hover:text-white link-underline">About</a></li>
+      <li><a href="#skills" class="muted hover:text-white link-underline">Skills</a></li>
+      <li><a href="#education" class="muted hover:text-white link-underline">Education</a></li>
+      <li><a href="#projects" class="muted hover:text-white link-underline">Projects</a></li>
+      <li><a href="#contact" class="muted hover:text-white link-underline">Contact</a></li>
+    </ul>
+    <a href="#contact" class="hidden md:inline-flex btn-primary">Hire Me</a>
+    <button id="menuBtn" class="md:hidden text-white" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden glass border-t px-6 py-4">
+    <ul class="flex flex-col gap-4 text-sm">
+      <li><a href="#home" class="muted hover:text-white">Home</a></li>
+      <li><a href="#about" class="muted hover:text-white">About</a></li>
+      <li><a href="#skills" class="muted hover:text-white">Skills</a></li>
+      <li><a href="#education" class="muted hover:text-white">Education</a></li>
+      <li><a href="#projects" class="muted hover:text-white">Projects</a></li>
+      <li><a href="#contact" class="muted hover:text-white">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-24 pb-12">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="fade-up">
+      <p class="text-sm tracking-widest text-cyan-400 font-semibold mb-4">👋 HELLO, I'M</p>
+      <h1 class="display text-5xl md:text-7xl font-bold leading-tight mb-4">
+        Harini <span class="gradient-text">D</span>
+      </h1>
+      <p class="text-2xl md:text-3xl muted mb-2">I'm a <span id="typed" class="text-white font-semibold typed"></span></p>
+      <p class="muted text-lg max-w-xl mb-8 mt-6 leading-relaxed">
+        First-year Computer Science Engineering student specializing in IoT at Sri Krishna College of Engineering and Technology, Coimbatore. Passionate about building beautiful, functional web experiences.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="btn-primary">Get in Touch →</a>
+        <a href="#projects" class="btn-ghost">View Work</a>
+      </div>
+      <div class="flex gap-5 mt-8 muted">
+        <a href="https://github.com/Harini198-hash" class="hover:text-cyan-400 transition">GitHub</a>
+        <a href="https://www.linkedin.com/in/harini-d-3aa86937b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="hover:text-cyan-400 transition">LinkedIn</a>
+        <a href="harini.d198@gmail.com" class="hover:text-cyan-400 transition">Email</a>
+      </div>
+    </div>
+    <div class="flex justify-center fade-up">
+      <div class="relative float">
+        <div class="absolute inset-0 gradient-bg rounded-full blur-3xl opacity-40 pulse-glow"></div>
+        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 glow">
+          <img src="harini-profile.jpg" alt="Harini D portrait" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentNode.innerHTML+='<div class=\'w-full h-full gradient-bg flex items-center justify-center display text-7xl font-bold text-white\'>HD</div>'"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-cyan-400 font-semibold mb-2 tracking-widest text-sm">ABOUT ME</p>
+      <h2 class="display text-4xl md:text-5xl font-bold">Get to know <span class="gradient-text">me</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="glass rounded-3xl p-8 space-y-4">
+        <h3 class="display text-2xl font-bold gradient-text">Aspiring Software Developer</h3>
+        <p class="muted leading-relaxed">I'm currently pursuing my Bachelor of Engineering in <span class="text-white font-semibold">Computer Science and Engineering with IoT specialization</span> at Sri Krishna College of Engineering and Technology, Coimbatore.</p>
+        <p class="muted leading-relaxed">I have a deep passion for programming and web development. As a quick learner with strong communication skills, I'm actively seeking internships and real-world software projects to enhance my technical and problem-solving abilities.</p>
+        <div class="flex flex-wrap gap-2 pt-3">
+          <span class="chip">Quick Learner</span><span class="chip">Team Player</span>
+          <span class="chip">Problem Solver</span><span class="chip">Curious Mind</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-5">
+        <div class="glass rounded-2xl p-6 text-center"><p class="display text-4xl font-bold gradient-text">4+</p><p class="text-sm muted mt-2">Skills Learning</p></div>
+        <div class="glass rounded-2xl p-6 text-center"><p class="display text-4xl font-bold gradient-text">1st</p><p class="text-sm muted mt-2">Year CSE</p></div>
+        <div class="glass rounded-2xl p-6 text-center"><p class="display text-4xl font-bold gradient-text">∞</p><p class="text-sm muted mt-2">Curiosity</p></div>
+        <div class="glass rounded-2xl p-6 text-center"><p class="display text-4xl font-bold gradient-text">100%</p><p class="text-sm muted mt-2">Dedication</p></div>
+        <div class="col-span-2 glass rounded-2xl p-6"><p class="text-sm muted italic">"Every expert was once a beginner. I'm building my journey, one line of code at a time."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-cyan-400 font-semibold mb-2 tracking-widest text-sm">SKILLS</p>
+      <h2 class="display text-4xl md:text-5xl font-bold">My <span class="gradient-text">technical toolkit</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass rounded-2xl p-8">
+        <h3 class="display font-bold text-xl mb-6">💻 Programming Languages</h3>
+        <div class="space-y-5" data-skills>
+          <div><div class="flex justify-between mb-2"><span>HTML & CSS</span><span class="muted text-sm">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span>Python</span><span class="muted text-sm">60%</span></div><div class="skill-bar"><div class="skill-fill" data-w="60"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span>C / C++</span><span class="muted text-sm">55%</span></div><div class="skill-bar"><div class="skill-fill" data-w="55"></div></div></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-8">
+        <h3 class="display font-bold text-xl mb-6">🚀 Currently Exploring</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="border-soft rounded-xl p-4 text-center hover:border-cyan-400 transition"><p class="text-2xl">⚛️</p><p class="text-sm mt-2">React</p></div>
+          <div class="border-soft rounded-xl p-4 text-center hover:border-cyan-400 transition"><p class="text-2xl">🌐</p><p class="text-sm mt-2">Web Dev</p></div>
+          <div class="border-soft rounded-xl p-4 text-center hover:border-cyan-400 transition"><p class="text-2xl">🔌</p><p class="text-sm mt-2">IoT</p></div>
+          <div class="border-soft rounded-xl p-4 text-center hover:border-cyan-400 transition"><p class="text-2xl">🗄️</p><p class="text-sm mt-2">Databases</p></div>
+          <div class="border-soft rounded-xl p-4 text-center hover:border-cyan-400 transition"><p class="text-2xl">☁️</p><p class="text-sm mt-2">Cloud</p></div>
+          <div class="border-soft rounded-xl p-4 text-center hover:border-cyan-400 transition"><p class="text-2xl">🎨</p><p class="text-sm mt-2">UI/UX</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-cyan-400 font-semibold mb-2 tracking-widest text-sm">EDUCATION</p>
+      <h2 class="display text-4xl md:text-5xl font-bold">My <span class="gradient-text">academic journey</span></h2>
+    </div>
+    <div class="space-y-6">
+      <div class="glass rounded-2xl p-6 flex gap-5 items-start hover:border-cyan-400/40 transition">
+        <span class="text-4xl">🎓</span>
+        <div>
+          <span class="text-xs font-semibold text-cyan-400 tracking-wider">2024 — PRESENT</span>
+          <h3 class="display font-bold text-xl mt-1">Bachelor of Engineering — CSE (IoT)</h3>
+          <p class="muted text-sm mt-1">Sri Krishna College of Engineering and Technology, Coimbatore</p>
+          <p class="text-purple-400 text-sm font-medium mt-2">Currently Pursuing — First Year</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex gap-5 items-start hover:border-cyan-400/40 transition">
+        <span class="text-4xl">📚</span>
+        <div>
+          <span class="text-xs font-semibold text-cyan-400 tracking-wider">2024</span>
+          <h3 class="display font-bold text-xl mt-1">Higher Secondary Education</h3>
+          <p class="muted text-sm mt-1">Completed with focus on Mathematics & Computer Science</p>
+          <p class="text-purple-400 text-sm font-medium mt-2">Foundation in Logic & Programming</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-cyan-400 font-semibold mb-2 tracking-widest text-sm">PROJECTS</p>
+      <h2 class="display text-4xl md:text-5xl font-bold">Things I'm <span class="gradient-text">building</span></h2>
+      <p class="muted mt-4 max-w-2xl mx-auto">As a first-year student, I'm actively learning and starting my project journey. Here's what's coming soon.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="glass rounded-2xl p-6 hover:border-cyan-400/40 transition"><p class="text-3xl mb-3">🌐</p><h3 class="display font-bold text-lg">Personal Portfolio</h3><p class="muted text-sm mt-2">A modern responsive portfolio (you're looking at it!).</p><span class="chip mt-4 inline-block">In Progress</span></div>
+      <div class="glass rounded-2xl p-6 hover:border-cyan-400/40 transition"><p class="text-3xl mb-3">📱</p><h3 class="display font-bold text-lg">IoT Smart Sensor</h3><p class="muted text-sm mt-2">A college mini-project exploring sensor data and dashboards.</p><span class="chip mt-4 inline-block">Upcoming</span></div>
+      <div class="glass rounded-2xl p-6 hover:border-cyan-400/40 transition"><p class="text-3xl mb-3">🤖</p><h3 class="display font-bold text-lg">AI Mini Tools</h3><p class="muted text-sm mt-2">Small Python utilities while learning ML basics.</p><span class="chip mt-4 inline-block">Upcoming</span></div>
+    </div>
+    <div class="glass rounded-3xl p-10 text-center border-cyan-400/30">
+      <h3 class="display text-2xl md:text-3xl font-bold mb-3">🎯 Seeking Internship Opportunities</h3>
+      <p class="muted max-w-xl mx-auto mb-6">Open to internships in web development, software engineering, and IoT where I can learn, contribute, and grow.</p>
+      <a href="#contact" class="btn-primary">Let's Connect →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-cyan-400 font-semibold mb-2 tracking-widest text-sm">CONTACT</p>
+      <h2 class="display text-4xl md:text-5xl font-bold">Let's <span class="gradient-text">talk</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass rounded-2xl p-8 space-y-5">
+        <h3 class="display font-bold text-xl">Get in touch</h3>
+        <p class="muted">Have an opportunity, project, or just want to say hi? My inbox is always open.</p>
+        <div class="space-y-3 pt-3">
+          <p>📧 <a href="mailto:harini.d198@gmail.com" class="hover:text-cyan-400">harini.d198@gmail.com</a></p>
+          <p>📍 Coimbatore, Tamil Nadu, India</p>
+          <p>🎓 Sri Krishna College of Engineering & Technology</p>
+        </div>
+      </div>
+      <form class="glass rounded-2xl p-8 space-y-4" onsubmit="event.preventDefault();this.innerHTML='<div class=\'text-center py-10\'><p class=\'text-4xl mb-3\'>✅</p><h3 class=\'display font-bold text-xl\'>Message sent!</h3><p class=\'muted mt-2\'>I\'ll get back to you soon.</p></div>'">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-primary w-full justify-center">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-8 text-center muted text-sm">
+  <p>© <span id="year"></span> Harini D. Built with AI and lots of curiosity.</p>
+</footer>
+
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) nav.classList.add('glass','border-b');
+    else nav.classList.remove('glass','border-b');
+  });
+  // Mobile menu
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Typed roles
+  const roles = ['Web Developer','CSE Student','IoT Enthusiast','Quick Learner','Problem Solver'];
+  const typed = document.getElementById('typed');
+  let ri=0, ci=0, deleting=false;
+  function tick(){
+    const current = roles[ri];
+    typed.textContent = current.slice(0, ci);
+    if (!deleting && ci < current.length){ ci++; setTimeout(tick, 90); }
+    else if (deleting && ci > 0){ ci--; setTimeout(tick, 50); }
+    else { deleting = !deleting; if (!deleting) ri = (ri+1) % roles.length; setTimeout(tick, 1200); }
+  }
+  tick();
+  // Skill bars on view
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.skill-fill').forEach(b=>b.style.width=b.dataset.w+'%');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.3});
+  document.querySelectorAll('[data-skills]').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
